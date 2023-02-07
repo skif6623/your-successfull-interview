@@ -1,13 +1,12 @@
 import React from "react";
 // import { LoginPage } from "./pages/LoginPage";
-import {RegistrationPage} from "./pages/RegistrationPage";
+// import {RegistrationPage} from "./pages/RegistrationPage";
+import {Home} from "./pages/HomePage";
 
-function App() {
+export const App = () => {
 	return (
 		<>
-			<RegistrationPage />
+			<Home />
 		</>
 	);
-}
-
-export default App;
+};
