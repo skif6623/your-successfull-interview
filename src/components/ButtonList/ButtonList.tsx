@@ -1,28 +1,27 @@
 import {Button} from "../Button/Button";
 import {Container, Typography} from "@mui/material";
 import {EButtonList, EbuttonItem} from "./ButtonList.styled";
-import {FaHtml5, FaCss3Alt, FaReact} from "react-icons/fa";
-import {DiJavascript1} from "react-icons/di";
+import {EJsIcon, EReactIcon, ECssIcon, EHtmlIcon} from "./ButtonList.styled";
 
 export const ButtonList = () => {
 	const buttonsIcons = [
 		{
-			icon: <FaHtml5 size={40} />,
+			icon: <EHtmlIcon />,
 			id: "html",
 			color: "#f46a3b",
 		},
 		{
-			icon: <FaCss3Alt size={40} />,
+			icon: <ECssIcon />,
 			id: "css",
 			color: "#2196f3",
 		},
 		{
-			icon: <DiJavascript1 size={40} />,
+			icon: <EJsIcon />,
 			id: "java script",
 			color: "#e6c830",
 		},
 		{
-			icon: <FaReact size={40} />,
+			icon: <EReactIcon />,
 			id: "react",
 			color: "#00d8ff",
 		},
