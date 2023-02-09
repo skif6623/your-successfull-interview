@@ -8,12 +8,13 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {ELink} from "../LoginForm/LoginForm.styled";
 
 function Copyright(props: any) {
 	return (
 		<Typography variant="body2" color="text.secondary" align="center" {...props}>
 			{"Copyright © "}
-			<Link color="inherit" href="/">
+			<Link color="inherit" href="#">
 				Your Successfull Interview
 			</Link>{" "}
 			{new Date().getFullYear()}
@@ -82,9 +83,7 @@ export function RegisterForm() {
 						</Button>
 						<Grid container justifyContent="center">
 							<Grid item>
-								<Link href="#" variant="body2">
-									Already have an account? Sign in
-								</Link>
+								<ELink to="/">Already have an account? Sign in</ELink>
 							</Grid>
 						</Grid>
 					</Box>
