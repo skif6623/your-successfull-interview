@@ -1,11 +1,17 @@
 import styled from "@emotion/styled";
+import {Link} from "react-router-dom";
 
-export const EButton = styled.button`
+export const EButton = styled(Link)`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	width: 100%;
 	height: 140px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: #ffffff;
+	text-decoration: none;
 	background-color: ${({color}) => (color ? color : "#000000")};
 	border: ${({color}) => (color ? `2px solid ${color}` : "#000000")};
 	border-radius: 10px;

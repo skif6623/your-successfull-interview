@@ -1,6 +1,6 @@
 import {Button} from "../Button/Button";
-import {Container, Typography} from "@mui/material";
-import {EButtonList, EbuttonItem} from "./ButtonList.styled";
+import {Container} from "@mui/material";
+import {EButtonList, EbuttonItem, ECategotyTitle} from "./ButtonList.styled";
 import {EJsIcon, EReactIcon, ECssIcon, EHtmlIcon} from "./ButtonList.styled";
 
 export const ButtonList = () => {
@@ -17,7 +17,7 @@ export const ButtonList = () => {
 		},
 		{
 			icon: <EJsIcon />,
-			id: "java script",
+			id: "java-script",
 			color: "#e6c830",
 		},
 		{
@@ -32,9 +32,9 @@ export const ButtonList = () => {
 				{buttonsIcons.map(({icon, id, color}) => {
 					return (
 						<EbuttonItem key={id}>
-							<Button color={color}>
+							<Button link={id} color={color}>
 								{icon}
-								<Typography textTransform="uppercase">{id}</Typography>
+								<ECategotyTitle>{id}</ECategotyTitle>
 							</Button>
 						</EbuttonItem>
 					);

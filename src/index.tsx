@@ -10,7 +10,7 @@ import "@fontsource/roboto/700.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-	<BrowserRouter basename="">
+	<BrowserRouter basename="your-successfull-interview">
 		<React.StrictMode>
 			<App />
 		</React.StrictMode>

@@ -22,6 +22,22 @@ export const EbuttonItem = styled.li`
 	}
 `;
 
+export const ECategotyTitle = styled.p`
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@media (min-width: 768px) {
+		margin-top: 20px;
+		font-size: 25px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 30px;
+	}
+`;
+
 export const EJsIcon = styled(DiJavascript1)`
 	width: 40px;
 	height: 40px;
