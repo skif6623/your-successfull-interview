@@ -14,7 +14,7 @@ export const App = () => {
 				<Route index element={<LoginPage />} />
 				<Route path="register" element={<RegistrationPage />} />
 				<Route path="category" element={<CategoryPage />} />
-				<Route path="category/:Id" element={<TechPage />} />
+				<Route path="category/:id" element={<TechPage />} />
 				{/* <Route path="html" element={<div style={{marginTop: "200px"}}>Запитання до html</div>} />
 				<Route path="css" element={<div>Запитання до css</div>} />
 				<Route path="java-script" element={<div>Запитання до js</div>} />
