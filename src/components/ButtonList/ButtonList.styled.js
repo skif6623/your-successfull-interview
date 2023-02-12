@@ -2,10 +2,6 @@ import styled from "@emotion/styled";
 import {FaHtml5, FaCss3Alt, FaReact} from "react-icons/fa";
 import {DiJavascript1} from "react-icons/di";
 
-const breakpoints = [320, 768, 1200];
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
-console.log(mq[0]);
-
 export const EButtonList = styled.ul`
 	display: flex;
 	flex-wrap: wrap;

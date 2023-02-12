@@ -1,8 +1,26 @@
-import React, {FC} from "react";
-import {Button} from "../components/Button/Button";
+import React, {FC, useEffect} from "react";
 
-// type SectionProps = {};
+import {fetchQuestions} from "../redux/operations";
+import {useAppDispatch} from "../hooks/hooks";
+
+import {SearchQuestion} from "../components/SearchQuestion/SearchQuestion";
+import {QuestionList} from "../components/QuestionsList/QuestionList";
+
+import {Container} from "@mui/system";
 
 export const TechPage: FC = (props: any) => {
-	return <main></main>;
+	const dispatch = useAppDispatch();
+
+	useEffect(() => {
+		dispatch(fetchQuestions());
+	}, [dispatch]);
+
+	return (
+		<main style={{marginTop: "80px"}}>
+			<Container>
+				<SearchQuestion />
+				<QuestionList title="all" />
+			</Container>
+		</main>
+	);
 };

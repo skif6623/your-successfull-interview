@@ -1,21 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-// import type {PayloadAction} from "@reduxjs/toolkit";
-// import type {RootState} from "./store";
+import {IQState} from "../types/types";
 import {fetchQuestions} from "./operations";
 
-interface IQItem {
-	id: string;
-	question: string;
-	answer: string;
-	categiry: string;
-}
-
-interface IQState {
-	questions: IQItem[];
-}
-
 const questionsInitialState: IQState = {
-	questions: [],
+	items: [],
+	isLoading: false,
+	isError: false,
 };
 
 const questionsSlice = createSlice({
@@ -24,7 +14,7 @@ const questionsSlice = createSlice({
 	reducers: {},
 	extraReducers: builder => {
 		builder.addCase(fetchQuestions.fulfilled, (state, action) => {
-			state.questions = action.payload;
+			state.items = action.payload;
 		});
 	},
 });

@@ -30,7 +30,7 @@ export const App = () => {
 								justifyContent: "center",
 							}}
 						>
-							<h1>Такого маршруту не існує</h1>
+							<h2>Такого маршруту не існує</h2>
 						</div>
 					}
 				/>
@@ -38,21 +38,3 @@ export const App = () => {
 		</Routes>
 	);
 };
-
-/* <Route path="/" element={<LoginPage />} />
-			<Route path="register" element={<RegistrationPage />} />
-			<Route
-				path="*"
-				element={
-					<div
-						style={{
-							height: "100vh",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					>
-						<h1>Такого маршруту не існує</h1>
-					</div>
-				}
-			/> */
