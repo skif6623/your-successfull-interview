@@ -1,4 +1,4 @@
-import {AppBar, Toolbar, Box} from "@mui/material";
+import {AppBar, Toolbar, Box, Button} from "@mui/material";
 import {TbBrandJavascript} from "react-icons/tb";
 import {SearchQuestion} from "../SearchQuestion/SearchQuestion";
 import {useAppSelector} from "../../hooks/hooks";
@@ -15,7 +15,7 @@ export const MainAppBar = () => {
 						<TbBrandJavascript size={40} />
 					</Box>
 					{showSearch && <SearchQuestion />}
-					{/* <Button color="inherit">Login</Button> */}
+					<Button color="inherit">Login</Button>
 				</Toolbar>
 			</AppBar>
 		</>
