@@ -1,15 +1,24 @@
-import React from "react";
+import React, {FC} from "react";
+import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
+import {changeFilter} from "../../redux/filterSlice";
+import {selectFilter} from "../../redux/selectors";
+
 import {EInput} from "./SearchQuestion.styled";
 
-export const SearchQuestion = (props: any) => {
-	const handleChange = (e: any) => {
+export const SearchQuestion: FC = (props: any) => {
+	const inputValue = useAppSelector(selectFilter);
+	const dispatch = useAppDispatch();
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
-		console.log(e.target.value);
+
+		dispatch(changeFilter(e.target.value));
 	};
+
 	return (
 		<>
 			<label htmlFor="filter"></label>
-			<EInput type="text" id="filter" onChange={handleChange} />
+			<EInput type="text" id="filter" value={inputValue} onChange={handleChange} />
 		</>
 	);
 };

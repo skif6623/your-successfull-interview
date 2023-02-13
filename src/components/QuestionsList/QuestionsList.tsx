@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 
 import {useAppSelector} from "../../hooks/hooks";
-import {selectQuestions} from "../../redux/selectors";
+import {selectQuestions, selectFilter} from "../../redux/selectors";
 
 import {ETitle, EQuestItem, EQuestList, EQuestTitle, EQuestSubtitle} from "./QuestionsList.styled";
 
@@ -15,9 +15,32 @@ interface IQuestionListProps {
 
 export const QuestionsList: FC<IQuestionListProps> = ({title}) => {
 	const questions: IQItem[] = useAppSelector(selectQuestions);
-	const html = questions.filter(el => el.category === "html");
+	const filter: string = useAppSelector(selectFilter);
 
-	console.log("html", html);
+	const getSortedQuestions = (questions: IQItem[]) => {
+		switch (title) {
+			case "html":
+				return questions.filter(item => item.category === title);
+			case "css":
+				return questions.filter(item => item.category === title);
+			case "java-script":
+				return questions.filter(item => item.category === title);
+			case "react":
+				return questions.filter(item => item.category === title);
+			default:
+				return;
+		}
+	};
+
+	const sortedContacts = getSortedQuestions(questions)!;
+
+	const getVisibleQuestions = () => {
+		const normalizeFilter = filter.toLowerCase();
+
+		return sortedContacts.filter(item => item.question.toLowerCase().includes(normalizeFilter));
+	};
+
+	const visibleQuestions = getVisibleQuestions();
 
 	getCurrentColor(title);
 
@@ -25,7 +48,7 @@ export const QuestionsList: FC<IQuestionListProps> = ({title}) => {
 		<>
 			<ETitle>{title}</ETitle>
 			<EQuestList>
-				{questions.map(({id, question, answer}: IQItem) => {
+				{visibleQuestions.map(({id, question, answer}: IQItem) => {
 					return (
 						<EQuestItem key={id}>
 							<EQuestTitle color={getCurrentColor(title)}>{question}</EQuestTitle>
