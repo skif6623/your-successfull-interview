@@ -5,7 +5,11 @@ import {selectFilter} from "../../redux/selectors";
 
 import {EInput} from "./SearchQuestion.styled";
 
-export const SearchQuestion: FC = (props: any) => {
+interface ISearchQuestionProps {
+	color?: string;
+}
+
+export const SearchQuestion: FC<ISearchQuestionProps> = ({color}) => {
 	const inputValue = useAppSelector(selectFilter);
 	const dispatch = useAppDispatch();
 
@@ -18,7 +22,7 @@ export const SearchQuestion: FC = (props: any) => {
 	return (
 		<>
 			<label htmlFor="filter"></label>
-			<EInput type="text" id="filter" value={inputValue} onChange={handleChange} />
+			<EInput type="text" id="filter" value={inputValue} onChange={handleChange} placeholder="Search" />
 		</>
 	);
 };

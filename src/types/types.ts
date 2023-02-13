@@ -14,4 +14,5 @@ export interface IQState {
 export interface IGlobalStore {
 	questions: IQState;
 	filter: string;
+	servise: boolean;
 }

@@ -1,11 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {questionsReducer} from "./questionsSlice";
 import {filterReducer} from "./filterSlice";
+import {serviseReducer} from "./serviseSlice";
 
 export const store = configureStore({
 	reducer: {
 		questions: questionsReducer,
 		filter: filterReducer,
+		servise: serviseReducer,
 	},
 });
 
