@@ -15,7 +15,7 @@ export const MainAppBar = () => {
 						<TbBrandJavascript size={40} />
 					</Box>
 					{showSearch && <SearchQuestion />}
-					<Button color="inherit">Login</Button>
+					{/* <Button color="inherit">Login</Button> */}
 				</Toolbar>
 			</AppBar>
 		</>

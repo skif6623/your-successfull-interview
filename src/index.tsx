@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<BrowserRouter basename="test-site">
+			<BrowserRouter basename="your-successfull-interview">
 				<App />
 			</BrowserRouter>
 		</Provider>
