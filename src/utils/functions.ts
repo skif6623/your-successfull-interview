@@ -1,12 +1,30 @@
-export const getCurrentColor = (title?: string) => {
+import {IQItem} from "../types/componentTypes/types";
+
+export const getSortedQuestions = (questions: IQItem[], title?: string) => {
 	switch (title) {
 		case "html":
-			return "#f46a3b";
+			return {
+				categoryItems: questions.filter(item => item.category === title),
+				color: "#f46a3b",
+			};
 		case "css":
-			return "#2196f3";
+			return {
+				categoryItems: questions.filter(item => item.category === title),
+				color: "#2196f3",
+			};
 		case "java-script":
-			return "#e6c830";
+			return {
+				categoryItems: questions.filter(item => item.category === title),
+				color: "#e6c830",
+			};
+
 		case "react":
-			return "#00d8ff";
+			return {
+				categoryItems: questions.filter(item => item.category === title),
+				color: "#00d8ff",
+			};
+
+		default:
+			return;
 	}
 };
