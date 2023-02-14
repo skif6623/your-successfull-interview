@@ -2,9 +2,9 @@ import React, {FC} from "react";
 import {useAppSelector} from "../../hooks/hooks";
 import {selectQuestions, selectFilter} from "../../redux/selectors";
 import {ETitle, EQuestItem, EQuestList, EQuestTitle, EQuestSubtitle} from "./QuestionsList.styled";
-import {IQItem} from "../../types/types";
+import {IQItem} from "../../types/componentTypes/types";
 import {getCurrentColor} from "../../utils/functions";
-
+import {useState} from "react";
 interface IQuestionListProps {
 	title?: string;
 }
@@ -12,6 +12,8 @@ interface IQuestionListProps {
 export const QuestionsList: FC<IQuestionListProps> = ({title}) => {
 	const questions: IQItem[] = useAppSelector(selectQuestions);
 	const filter: string = useAppSelector(selectFilter);
+
+	const [activeAnswer, setActiveAnswer] = useState<string>("-1");
 
 	const getSortedQuestions = (questions: IQItem[]) => {
 		switch (title) {
@@ -40,15 +42,25 @@ export const QuestionsList: FC<IQuestionListProps> = ({title}) => {
 
 	const currentColor = getCurrentColor(title)!;
 
+	const toggleAnswer = (id: string): any => {
+		if (id === activeAnswer) {
+			setActiveAnswer("-1");
+			return;
+		}
+		setActiveAnswer(id);
+	};
+
 	return (
 		<>
 			<ETitle>{title}</ETitle>
 			<EQuestList>
 				{visibleQuestions.map(({id, question, answer}: IQItem) => {
 					return (
-						<EQuestItem key={id}>
+						<EQuestItem key={id} onClick={() => toggleAnswer(id)}>
 							<EQuestTitle color={currentColor}>{question}</EQuestTitle>
-							<EQuestSubtitle>{answer}</EQuestSubtitle>
+							<EQuestSubtitle id={id} active={activeAnswer}>
+								{answer}
+							</EQuestSubtitle>
 						</EQuestItem>
 					);
 				})}

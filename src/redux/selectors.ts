@@ -1,4 +1,4 @@
-import {IGlobalStore} from "../types/types";
+import {IGlobalStore} from "../types/componentTypes/types";
 
 export const selectQuestions = (state: IGlobalStore) => state.questions.items;
 

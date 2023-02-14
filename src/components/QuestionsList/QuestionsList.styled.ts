@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import {ISubtitle} from "../../types/emotionTypes/types";
 
 export const ETitle = styled.h3`
 	margin-top: 25px;
@@ -27,6 +28,7 @@ export const EQuestTitle = styled.h3`
 `;
 
 export const EQuestSubtitle = styled.p`
+	display: ${({id, active}: ISubtitle) => (id === active ? "block" : "none")};
 	padding: 10px;
 	font-size: 18px;
 	font-weight: 400;

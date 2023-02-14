@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IQState} from "../types/types";
+import {IQState} from "../types/componentTypes/types";
 import {fetchQuestions} from "./operations";
 
 const questionsInitialState: IQState = {
