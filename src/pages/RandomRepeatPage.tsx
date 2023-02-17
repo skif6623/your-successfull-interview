@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
 import { useAppSelector } from '../hooks/hooks';
 import { Box, Container } from '@mui/system';
 import { QuestionTitle } from '../components/QuestionTitle/QuestionTitle';
 import { AnswerTitle } from '../components/AnswerTitle/AnswerTitle';
+import { selectQuestions } from '../redux/selectors';
 
-// type Props = {};
+export const RandomRepeatPage: FC = () => {
+  const questions = useAppSelector(selectQuestions);
+  const [randomNumber, setRandomNumber] = useState<number>(0);
 
-export const RandomRepeatPage = () => {
-  const questions = useAppSelector(state => state.questions.items);
-  console.log(questions);
+  function handleRandomNumber(min: number, max: number) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
 
   return (
     <main style={{ marginTop: '80px' }}>
@@ -19,11 +23,10 @@ export const RandomRepeatPage = () => {
           justifyContent="space-between"
         >
           <Box>
-            <QuestionTitle color="blue">Питання</QuestionTitle>
-            <AnswerTitle>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
-              qui.
-            </AnswerTitle>
+            <QuestionTitle color="blue">
+              {questions[randomNumber].question}
+            </QuestionTitle>
+            <AnswerTitle>{questions[randomNumber].answer}</AnswerTitle>
           </Box>
           <Box>
             <Box display="flex" justifyContent="space-between">
@@ -38,6 +41,9 @@ export const RandomRepeatPage = () => {
                 margin: '0 auto',
               }}
               type="button"
+              onClick={() =>
+                setRandomNumber(handleRandomNumber(0, questions.length))
+              }
             >
               Отримати питання
             </button>
