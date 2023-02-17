@@ -1,10 +1,15 @@
 import React from 'react';
+import { useAppSelector } from '../hooks/hooks';
 import { Box, Container } from '@mui/system';
 import { QuestionTitle } from '../components/QuestionTitle/QuestionTitle';
 import { AnswerTitle } from '../components/AnswerTitle/AnswerTitle';
+
 // type Props = {};
 
 export const RandomRepeatPage = () => {
+  const questions = useAppSelector(state => state.questions.items);
+  console.log(questions);
+
   return (
     <main style={{ marginTop: '80px' }}>
       <Container>
