@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { useAppSelector } from '../hooks/hooks';
 import { Box, Container } from '@mui/system';
 import { QuestionTitle } from '../components/QuestionTitle/QuestionTitle';
@@ -8,6 +8,12 @@ import { selectQuestions } from '../redux/selectors';
 export const RandomRepeatPage: FC = () => {
   const questions = useAppSelector(selectQuestions);
   const [randomNumber, setRandomNumber] = useState<number>(0);
+
+  console.log(randomNumber);
+
+  useEffect(() => {
+    setRandomNumber(handleRandomNumber(0, questions.length));
+  }, [questions.length]);
 
   function handleRandomNumber(min: number, max: number) {
     let rand = min + Math.random() * (max + 1 - min);

@@ -6,7 +6,7 @@ import { Layout } from './components/Layout/Layout';
 // import {RegistrationPage} from "./pages/RegistrationPage";
 import { CategoryPage } from './pages/CategoryPage';
 import { RandomRepeatPage } from './pages/RandomRepeatPage';
-// import { TechPage } from './pages/TechPage';
+import { TechPage } from './pages/TechPage';
 
 export const App = () => {
   return (

@@ -13,7 +13,7 @@ export const QuestionTitle: FC<QuestionTitleProps> = ({
   margin,
 }) => {
   return (
-    <EQuestTitle marginValue="30px" color={color}>
+    <EQuestTitle marginValue={margin} color={color}>
       {children}
     </EQuestTitle>
   );

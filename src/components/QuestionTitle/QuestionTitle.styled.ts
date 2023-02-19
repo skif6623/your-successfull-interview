@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface IQuestTitleProps {
-  marginValue: string;
+  marginValue?: string;
   color: string;
 }
 

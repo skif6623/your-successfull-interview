@@ -9,7 +9,7 @@ export const CategoryPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // dispatch(fetchQuestions());
+    dispatch(fetchQuestions());
     dispatch(isShowSearch(false));
   }, [dispatch]);
 
