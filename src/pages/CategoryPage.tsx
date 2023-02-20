@@ -1,4 +1,5 @@
 import { ButtonList } from '../components/ButtonList/ButtonList';
+import { CategoryList } from '../components/CategoryList/CategoryList';
 
 import { useEffect } from 'react';
 import { useAppDispatch } from '../hooks/hooks';
@@ -15,7 +16,8 @@ export const CategoryPage = () => {
 
   return (
     <main>
-      <ButtonList />
+      <CategoryList />
+      {/* <ButtonList /> */}
     </main>
   );
 };

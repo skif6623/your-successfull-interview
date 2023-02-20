@@ -32,7 +32,7 @@ export const QuestionsList: FC<IQuestionListProps> = ({ title }) => {
 
   const visibleQuestions = getVisibleQuestions();
 
-  const toggleAnswer = (id: string): any => {
+  const toggleAnswer = (id: string): void => {
     if (id === activeAnswer) {
       setActiveAnswer('-1');
       return;
