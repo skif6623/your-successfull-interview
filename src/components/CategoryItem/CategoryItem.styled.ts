@@ -4,6 +4,7 @@ interface EProps {
   image?: string;
   active?: boolean;
   color?: string;
+  id?: string;
 }
 
 export const ECategoryItem = styled.li`
@@ -38,9 +39,10 @@ export const ECategoryTitle = styled.h3`
 `;
 
 export const EIconWrap = styled.div`
-  position: ${({ active }: EProps) => (active ? 'absolute' : 'static')};
+  position: ${({ active }: EProps) => (active ? 'absolute' : 'reletive')};
   top: ${({ active }: EProps) => (active ? '50%' : '0')};
   right: ${({ active }: EProps) => (active ? '50%' : '0')};
-  transform: ${({ active }: EProps) => (active ? 'translate(50%, -50%)' : '0')};
-  transition: top 1000ms ease, right 1000ms ease, tranform 1000ms ease;
+  transform: ${({ active }: EProps) =>
+    active ? 'translate(50%, -50%)' : 'translate(0, 0)'};
+  transition: top 1000ms ease, right 1000ms ease, tranform 1000ms ease 5000ms;
 `;

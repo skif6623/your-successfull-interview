@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 import {
   ECategoryItem,
@@ -14,6 +14,8 @@ interface ICategoryItemsProps {
   color: string;
   image: string;
   id: string;
+  active: string;
+  toggle: any;
 }
 
 export const CategoryItem: FC<ICategoryItemsProps> = ({
@@ -22,31 +24,19 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
   color,
   image,
   id,
+  active,
+  toggle,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('java-script');
-
-  const toggleCatery = (text: string): any => {
-    if (text === activeCategory) {
-      setActiveCategory('-1');
-      return;
-    }
-    setActiveCategory(text);
-  };
-
-  const active = id === activeCategory;
+  const activeItem = id === active;
 
   return (
-    <ECategoryItem
-      active={active}
-      image={image}
-      onClick={() => toggleCatery(id)}
-    >
+    <ECategoryItem active={activeItem} image={image} onClick={() => toggle(id)}>
       <ETitleWrap>
         <ETitleOverlay>
           <ECategoryTitle color={color}>{children}</ECategoryTitle>
         </ETitleOverlay>
       </ETitleWrap>
-      <EIconWrap active={active}>{icon}</EIconWrap>
+      <EIconWrap active={activeItem}>{icon}</EIconWrap>
     </ECategoryItem>
   );
 };
