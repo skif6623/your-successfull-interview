@@ -2,20 +2,19 @@ import styled from '@emotion/styled';
 
 interface EProps {
   image?: string;
-  active?: string;
-  id?: string;
+  active?: boolean;
   color?: string;
 }
 
 export const ECategoryItem = styled.li`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: ${({ active, id }: EProps) =>
-    active === id ? 'calc(100vh - 326px)' : '90px'};
+  height: ${({ active }: EProps) => (active ? 'calc(100vh - 326px)' : '90px')};
   padding: 15px;
   background-image: url(${({ image }: EProps) => (image ? image : 'none')});
-  transition: height 500ms ease, background-color 5000ms ease;
+  transition: all 500ms ease;
   cursor: pointer;
 `;
 
@@ -36,4 +35,12 @@ export const ETitleOverlay = styled.div`
 export const ECategoryTitle = styled.h3`
   text-transform: uppercase;
   color: ${({ color }: EProps) => (color ? color : 'black')};
+`;
+
+export const EIconWrap = styled.div`
+  position: ${({ active }: EProps) => (active ? 'absolute' : 'static')};
+  top: ${({ active }: EProps) => (active ? '50%' : '0')};
+  right: ${({ active }: EProps) => (active ? '50%' : '0')};
+  transform: ${({ active }: EProps) => (active ? 'translate(50%, -50%)' : '0')};
+  transition: top 1000ms ease, right 1000ms ease, tranform 1000ms ease;
 `;

@@ -40,20 +40,28 @@ export const CategoryList = () => {
   ];
 
   return (
-    <ul>
-      {categoryIcons.map(({ icon, id, color, image }: any) => {
-        return (
-          <CategoryItem
-            id={id}
-            image={image}
-            color={color}
-            icon={icon}
-            key={id}
-          >
-            {id}
-          </CategoryItem>
-        );
-      })}
-    </ul>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh - 56px',
+      }}
+    >
+      <ul>
+        {categoryIcons.map(({ icon, id, color, image }: any) => {
+          return (
+            <CategoryItem
+              id={id}
+              image={image}
+              color={color}
+              icon={icon}
+              key={id}
+            >
+              {id}
+            </CategoryItem>
+          );
+        })}
+      </ul>
+    </div>
   );
 };

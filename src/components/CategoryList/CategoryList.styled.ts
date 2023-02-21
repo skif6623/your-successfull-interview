@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 import { FaHtml5, FaCss3Alt, FaReact } from 'react-icons/fa';
 import { DiJavascript1 } from 'react-icons/di';
 
+export const ECatList = styled.ul`
+  height: 100vh;
+`;
+
 export const EJsIcon = styled(DiJavascript1)`
   width: 40px;
   height: 40px;

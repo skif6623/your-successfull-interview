@@ -5,6 +5,7 @@ import {
   ECategoryTitle,
   ETitleOverlay,
   ETitleWrap,
+  EIconWrap,
 } from './CategoryItem.styled';
 
 interface ICategoryItemsProps {
@@ -22,9 +23,9 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
   image,
   id,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('-1');
+  const [activeCategory, setActiveCategory] = useState<string>('java-script');
 
-  const toggleCatery = (text: string): void => {
+  const toggleCatery = (text: string): any => {
     if (text === activeCategory) {
       setActiveCategory('-1');
       return;
@@ -32,10 +33,11 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
     setActiveCategory(text);
   };
 
+  const active = id === activeCategory;
+
   return (
     <ECategoryItem
-      id={id}
-      active={activeCategory}
+      active={active}
       image={image}
       onClick={() => toggleCatery(id)}
     >
@@ -44,7 +46,7 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
           <ECategoryTitle color={color}>{children}</ECategoryTitle>
         </ETitleOverlay>
       </ETitleWrap>
-      {icon}
+      <EIconWrap active={active}>{icon}</EIconWrap>
     </ECategoryItem>
   );
 };
