@@ -8,12 +8,12 @@ export const ECatList = styled.ul`
 `;
 
 export const EJsIcon = styled(DiJavascript1)`
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
 
   /* @media (min-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: 1200px) {
     width: 150px;
@@ -21,12 +21,12 @@ export const EJsIcon = styled(DiJavascript1)`
   } */
 `;
 export const EReactIcon = styled(FaReact)`
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
 
   /* @media (min-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: 1200px) {
     width: 150px;
@@ -34,12 +34,12 @@ export const EReactIcon = styled(FaReact)`
   } */
 `;
 export const ECssIcon = styled(FaCss3Alt)`
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
 
   /* @media (min-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: 1200px) {
     width: 150px;
@@ -47,12 +47,12 @@ export const ECssIcon = styled(FaCss3Alt)`
   } */
 `;
 export const EHtmlIcon = styled(FaHtml5)`
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
 
   /* @media (min-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: 1200px) {
     width: 150px;

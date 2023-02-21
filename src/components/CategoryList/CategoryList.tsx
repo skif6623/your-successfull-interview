@@ -42,10 +42,6 @@ export const CategoryList: FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('java-script');
 
   const toggleCategory = (text: string): any => {
-    // if (text === activeCategory) {
-    //   setActiveCategory(text);
-    //   return;
-    // }
     setActiveCategory(text);
   };
 

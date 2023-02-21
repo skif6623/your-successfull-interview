@@ -32,12 +32,14 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
 
   return (
     <ECategoryItem active={activeItem} image={image} onClick={() => toggle(id)}>
-      <ETitleWrap>
+      <ETitleWrap active={activeItem}>
         <ETitleOverlay>
           <ECategoryTitle color={color}>{children}</ECategoryTitle>
         </ETitleOverlay>
       </ETitleWrap>
-      <EIconWrap active={activeItem}>{icon}</EIconWrap>
+      <EIconWrap active={activeItem} color={color}>
+        {icon}
+      </EIconWrap>
       <ECategoryBtn active={activeItem} color={color}>
         {id}
       </ECategoryBtn>
