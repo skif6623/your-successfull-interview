@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { questionsReducer } from './questionsSlice';
 import { filterReducer } from './filterSlice';
 import { serviseReducer } from './serviseSlice';
@@ -19,6 +19,9 @@ export const store = configureStore({
     filter: filterReducer,
     servise: serviseReducer,
   },
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -17,6 +17,10 @@ export const ECategoryItem = styled.li`
   background-image: url(${({ image }: EProps) => (image ? image : 'none')});
   transition: all 500ms ease;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    background-size: cover;
+  }
 `;
 
 export const ETitleWrap = styled.div`
