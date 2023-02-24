@@ -5,15 +5,23 @@ import {
   ECssIcon,
   EJsIcon,
   EReactIcon,
+  EDiceIcon,
 } from './CategoryList.styled';
 
 const categoryIcons = [
+  {
+    icon: <EDiceIcon />,
+    id: 'random',
+    color: '#3b3d3d',
+    image:
+      'https://cdn.pixabay.com/photo/2019/07/11/15/34/luck-4330900_960_720.jpg',
+  },
   {
     icon: <EHtmlIcon />,
     id: 'html',
     color: '#f46a3b',
     image:
-      'https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346_960_720.jpg',
+      'https://cdn.pixabay.com/photo/2013/07/18/20/25/boat-164977_960_720.jpg',
   },
   {
     icon: <ECssIcon />,

@@ -1,4 +1,3 @@
-import { ButtonList } from '../components/ButtonList/ButtonList';
 import { CategoryList } from '../components/CategoryList/CategoryList';
 
 import { useEffect } from 'react';
@@ -17,7 +16,6 @@ export const CategoryPage = () => {
   return (
     <main>
       <CategoryList />
-      {/* <ButtonList /> */}
     </main>
   );
 };

@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 interface EProps {
   image?: string;
-  active?: boolean;
+  open?: boolean;
   color?: string;
   id?: string;
 }
@@ -12,9 +13,11 @@ export const ECategoryItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: ${({ active }: EProps) => (active ? 'calc(100vh - 326px)' : '90px')};
+  height: ${({ open }: EProps) => (open ? 'calc(100vh - 416px)' : '90px')};
   padding: 15px;
   background-image: url(${({ image }: EProps) => (image ? image : 'none')});
+  background-position-y: -80px;
+  background-repeat: no-repeat;
   transition: all 500ms ease;
   overflow: hidden;
 
@@ -24,8 +27,8 @@ export const ECategoryItem = styled.li`
 `;
 
 export const ETitleWrap = styled.div`
-  opacity: ${({ active }: EProps) => (active ? '0' : '1')};
-  pointer-events: ${({ active }) => (active ? 'none' : 'auto')};
+  opacity: ${({ open }: EProps) => (open ? '0' : '1')};
+  pointer-events: ${({ open }) => (open ? 'none' : 'auto')};
   height: 100%;
   transition: opacity 500ms ease;
 `;
@@ -47,37 +50,38 @@ export const ECategoryTitle = styled.h3`
 
 export const EIconWrap = styled.div`
   position: absolute;
-  top: ${({ active }: EProps) => (active ? '20%' : '20%')};
-  right: ${({ active }: EProps) => (active ? '50%' : '0')};
-  transform: ${({ active }: EProps) =>
-    active ? 'translate(50%, 0)' : 'translate(50%, 0)'};
+  top: ${({ open }: EProps) => (open ? '10%' : '10%')};
+  right: ${({ open }: EProps) => (open ? '50%' : '0')};
+  transform: ${({ open }: EProps) =>
+    open ? 'translate(50%, 0)' : 'translate(50%, 0)'};
 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
 
   color: ${({ color }) => (color ? color : '#000000')};
   background: #ffffff;
   border-radius: 50%;
-  opacity: ${({ active }: EProps) => (active ? '1' : '0')};
-  pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
+  opacity: ${({ open }: EProps) => (open ? '1' : '0')};
+  pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
   transition: all 500ms ease 250ms;
 `;
 
-export const ECategoryBtn = styled.button`
+export const ECategoryBtn = styled(Link)`
   position: absolute;
-  top: ${({ active }: EProps) => (active ? '70%' : '70%')};
-  left: ${({ active }: EProps) => (active ? '50%' : '0')};
-  transform: ${({ active }: EProps) =>
-    active ? 'translate(-50%, 0)' : 'translate(-50%, -50%)'};
+  top: ${({ open }: EProps) => (open ? '70%' : '70%')};
+  left: ${({ open }: EProps) => (open ? '50%' : '0')};
+  transform: ${({ open }: EProps) =>
+    open ? 'translate(-50%, 0)' : 'translate(-50%, -50%)'};
 
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 43px;
 
+  text-decoration: none;
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
@@ -89,8 +93,8 @@ export const ECategoryBtn = styled.button`
   backdrop-filter: blur(10px);
   border: ${({ color }) => (color ? `2px solid ${color}` : '2px solid black')};
   border-radius: 4px;
-  opacity: ${({ active }: EProps) => (active ? '1' : '0')};
-  pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
+  opacity: ${({ open }: EProps) => (open ? '1' : '0')};
+  pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
   transition: top 500ms ease 250ms, left 500ms ease 250ms,
     transform 500ms ease 250ms, opacity 500ms ease 250ms, box-shadow 250ms ease;
 

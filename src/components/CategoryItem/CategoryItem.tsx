@@ -31,16 +31,16 @@ export const CategoryItem: FC<ICategoryItemsProps> = ({
   const activeItem = id === active;
 
   return (
-    <ECategoryItem active={activeItem} image={image} onClick={() => toggle(id)}>
-      <ETitleWrap active={activeItem}>
+    <ECategoryItem open={activeItem} image={image} onClick={() => toggle(id)}>
+      <ETitleWrap open={activeItem}>
         <ETitleOverlay>
           <ECategoryTitle color={color}>{children}</ECategoryTitle>
         </ETitleOverlay>
       </ETitleWrap>
-      <EIconWrap active={activeItem} color={color}>
+      <EIconWrap open={activeItem} color={color}>
         {icon}
       </EIconWrap>
-      <ECategoryBtn active={activeItem} color={color}>
+      <ECategoryBtn to={`/${id}`} open={activeItem} color={color}>
         {id}
       </ECategoryBtn>
     </ECategoryItem>

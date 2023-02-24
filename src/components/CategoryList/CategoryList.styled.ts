@@ -2,74 +2,75 @@ import styled from '@emotion/styled';
 
 import { FaHtml5, FaCss3Alt, FaReact } from 'react-icons/fa';
 import { DiJavascript1 } from 'react-icons/di';
+import { GiPerspectiveDiceSixFacesFour } from 'react-icons/gi';
 
 export const ECatList = styled.ul`
   height: 100vh;
 `;
 
 export const EJsIcon = styled(DiJavascript1)`
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 
   /* @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
   @media (min-width: 1200px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   } */
 `;
 export const EReactIcon = styled(FaReact)`
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 
   /* @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
   @media (min-width: 1200px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   } */
 `;
 export const ECssIcon = styled(FaCss3Alt)`
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 
   /* @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
   @media (min-width: 1200px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   } */
 `;
 export const EHtmlIcon = styled(FaHtml5)`
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 
   /* @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
   @media (min-width: 1200px) {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   } */
 `;
 
-// .visually-hidden {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   border: 0;
-//   padding: 0;
+export const EDiceIcon = styled(GiPerspectiveDiceSixFacesFour)`
+  width: 140px;
+  height: 140px;
 
-//   white-space: nowrap;
-//   clip-path: inset(100%);
-//   clip: rect(0 0 0 0);
-//   overflow: hidden;
-// }
+  /* @media (min-width: 768px) {
+    width: 140px;
+    height: 140px;
+  }
+  @media (min-width: 1200px) {
+    width: 140px;
+    height: 140px;
+  } */
+`;
