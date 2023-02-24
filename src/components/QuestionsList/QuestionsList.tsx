@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useState } from 'react';
 import { useAppSelector } from '../../hooks/hooks';
-import { selectQuestions, selectFilter } from '../../redux/selectors';
+import { selectFilter } from '../../redux/selectors';
 import { QuestionTitle } from '../QuestionTitle/QuestionTitle';
 import {
   ETitle,
@@ -9,23 +9,24 @@ import {
   EQuestList,
   EQuestSubtitle,
 } from './QuestionsList.styled';
-import { IQItem } from '../../types/componentTypes/types';
-import { getSortedQuestions } from '../../utils/functions';
+import { IQItem, IQuestParams } from '../../types/componentTypes/types';
 
 interface IQuestionListProps {
   title?: string;
+  questParams: IQuestParams;
 }
 
-export const QuestionsList: FC<IQuestionListProps> = ({ title }) => {
+export const QuestionsList: FC<IQuestionListProps> = ({
+  title,
+  questParams,
+}) => {
   const [activeAnswer, setActiveAnswer] = useState<string>('-1');
-  const questions: IQItem[] = useAppSelector(selectQuestions);
   const filter: string = useAppSelector(selectFilter);
-  const sortedQuestions = getSortedQuestions(questions, title)!;
 
   const getVisibleQuestions = () => {
     const normalizeFilter = filter.toLowerCase();
 
-    return sortedQuestions.categoryItems.filter(item =>
+    return questParams.categoryItems.filter(item =>
       item.question.toLowerCase().includes(normalizeFilter)
     );
   };
@@ -47,7 +48,7 @@ export const QuestionsList: FC<IQuestionListProps> = ({ title }) => {
         {visibleQuestions.map(({ id, question, answer }: IQItem) => {
           return (
             <EQuestItem key={id} onClick={() => toggleAnswer(id)}>
-              <QuestionTitle color={sortedQuestions.color}>
+              <QuestionTitle color={questParams.color}>
                 {question}
               </QuestionTitle>
               <EQuestSubtitle id={id} active={activeAnswer}>

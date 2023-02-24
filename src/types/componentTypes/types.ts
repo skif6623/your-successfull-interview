@@ -20,3 +20,9 @@ export interface IGlobalStore {
   filter: string;
   servise: boolean;
 }
+
+export interface IQuestParams {
+  categoryItems: IQItem[];
+  color: string;
+  bg: string;
+}

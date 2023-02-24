@@ -9,7 +9,7 @@ export const MainAppBar = () => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position={showSearch ? 'fixed' : 'static'}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
             <TbBrandJavascript size={40} />
