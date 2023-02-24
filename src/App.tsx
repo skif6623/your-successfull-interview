@@ -5,8 +5,6 @@ import { Layout } from './components/Layout/Layout';
 import { CategoryPage } from './pages/CategoryPage';
 import { RandomRepeatPage } from './pages/RandomRepeatPage';
 import { TechPage } from './pages/TechPage';
-// import {LoginPage} from "./pages/LoginPage";
-// import {RegistrationPage} from "./pages/RegistrationPage";
 
 export const App = () => {
   return (
@@ -14,25 +12,7 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<CategoryPage />} />
         <Route path="/:id" element={<TechPage />} />
-        {/* <Route path="/1" element={<RandomRepeatPage />} /> */}
-        {/* <Route path="/:id" element={<RandomRepeatPage />} /> */}
-        {/* <Route path="register" element={<RegistrationPage />} /> */}
-        {/* <Route path="category" element={<CategoryPage />} /> */}
-        <Route
-          path="*"
-          element={
-            <div
-              style={{
-                height: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <h2>Такого маршруту не існує</h2>
-            </div>
-          }
-        />
+        <Route path="/random" element={<RandomRepeatPage />} />
       </Route>
     </Routes>
   );
