@@ -2,14 +2,10 @@ import React, { FC } from 'react';
 import { useState } from 'react';
 import { useAppSelector } from '../../hooks/hooks';
 import { selectFilter } from '../../redux/selectors';
-import { QuestionTitle } from '../QuestionTitle/QuestionTitle';
-import {
-  ETitle,
-  EQuestItem,
-  EQuestList,
-  EQuestSubtitle,
-} from './QuestionsList.styled';
+import { SimpleAccordion } from '../Accordion/Accordion';
+import { ETitle, EQuestItem, EQuestList } from './QuestionsList.styled';
 import { IQItem, IQuestParams } from '../../types/componentTypes/types';
+import { getVisibleQuestions } from '../../utils/functions';
 
 interface IQuestionListProps {
   title?: string;
@@ -22,16 +18,7 @@ export const QuestionsList: FC<IQuestionListProps> = ({
 }) => {
   const [activeAnswer, setActiveAnswer] = useState<string>('-1');
   const filter: string = useAppSelector(selectFilter);
-
-  const getVisibleQuestions = () => {
-    const normalizeFilter = filter.toLowerCase();
-
-    return questParams.categoryItems.filter(item =>
-      item.question.toLowerCase().includes(normalizeFilter)
-    );
-  };
-
-  const visibleQuestions = getVisibleQuestions();
+  const visibleQuestions = getVisibleQuestions(filter, questParams);
 
   const toggleAnswer = (id: string): void => {
     if (id === activeAnswer) {
@@ -48,12 +35,17 @@ export const QuestionsList: FC<IQuestionListProps> = ({
         {visibleQuestions.map(({ id, question, answer }: IQItem) => {
           return (
             <EQuestItem key={id} onClick={() => toggleAnswer(id)}>
-              <QuestionTitle color={questParams.color}>
+              <SimpleAccordion
+                color={questParams.color}
+                question={question}
+                answer={answer}
+              />
+              {/* <QuestionTitle color={questParams.color}>
                 {question}
               </QuestionTitle>
               <EQuestSubtitle id={id} active={activeAnswer}>
                 {answer}
-              </EQuestSubtitle>
+              </EQuestSubtitle> */}
             </EQuestItem>
           );
         })}

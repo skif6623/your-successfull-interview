@@ -1,4 +1,4 @@
-import { IQItem } from '../types/componentTypes/types';
+import { IQItem, IQuestParams } from '../types/componentTypes/types';
 
 export const getSortedQuestions = (questions: IQItem[], title?: string) => {
   switch (title) {
@@ -31,4 +31,18 @@ export const getSortedQuestions = (questions: IQItem[], title?: string) => {
     default:
       return;
   }
+};
+
+export const getVisibleQuestions = (
+  filter: string,
+  questParams: IQuestParams
+) => {
+  const func = () => {
+    const normalizeFilter = filter.toLowerCase();
+
+    return questParams.categoryItems.filter(item =>
+      item.question.toLowerCase().includes(normalizeFilter)
+    );
+  };
+  return func();
 };

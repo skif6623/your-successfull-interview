@@ -6,10 +6,12 @@ interface IQuestTitleProps {
 }
 
 export const EQuestTitle = styled.h3`
+  display: flex;
+  align-items: center;
+  min-height: 65px;
   margin-bottom: ${({ marginValue }: IQuestTitleProps) =>
-    marginValue ? marginValue : 'none'};
+    marginValue ? marginValue : '0'};
   padding: 10px;
-  color: #ffffff;
-  background-color: ${({ color }) => (color ? color : '#000000')};
-  border-radius: 10px;
+  color: ${({ color }) => (color ? color : '#000000')};
+  background-color: #ffffff;
 `;
