@@ -17,13 +17,3 @@ export const EQuestItem = styled.li`
   display: flex;
   flex-direction: column;
 `;
-
-// export const EQuestSubtitle = styled.p`
-//   padding: 10px;
-//   font-size: 18px;
-//   font-weight: 400;
-//   background-color: #ffffff;
-//   transition: all 500ms ease;
-//   position: relative;
-//   overflow: hidden;
-// `;

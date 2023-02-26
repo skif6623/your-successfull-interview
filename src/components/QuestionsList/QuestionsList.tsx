@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useState } from 'react';
 import { useAppSelector } from '../../hooks/hooks';
 import { selectFilter } from '../../redux/selectors';
@@ -40,12 +40,6 @@ export const QuestionsList: FC<IQuestionListProps> = ({
                 question={question}
                 answer={answer}
               />
-              {/* <QuestionTitle color={questParams.color}>
-                {question}
-              </QuestionTitle>
-              <EQuestSubtitle id={id} active={activeAnswer}>
-                {answer}
-              </EQuestSubtitle> */}
             </EQuestItem>
           );
         })}

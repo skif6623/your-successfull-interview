@@ -11,66 +11,21 @@ export const ECatList = styled.ul`
 export const EJsIcon = styled(DiJavascript1)`
   width: 140px;
   height: 140px;
-
-  /* @media (min-width: 768px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media (min-width: 1200px) {
-    width: 140px;
-    height: 140px;
-  } */
 `;
 export const EReactIcon = styled(FaReact)`
   width: 140px;
   height: 140px;
-
-  /* @media (min-width: 768px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media (min-width: 1200px) {
-    width: 140px;
-    height: 140px;
-  } */
 `;
 export const ECssIcon = styled(FaCss3Alt)`
   width: 140px;
   height: 140px;
-
-  /* @media (min-width: 768px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media (min-width: 1200px) {
-    width: 140px;
-    height: 140px;
-  } */
 `;
 export const EHtmlIcon = styled(FaHtml5)`
   width: 140px;
   height: 140px;
-
-  /* @media (min-width: 768px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media (min-width: 1200px) {
-    width: 140px;
-    height: 140px;
-  } */
 `;
 
 export const EDiceIcon = styled(GiPerspectiveDiceSixFacesFour)`
   width: 140px;
   height: 140px;
-
-  /* @media (min-width: 768px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media (min-width: 1200px) {
-    width: 140px;
-    height: 140px;
-  } */
 `;
