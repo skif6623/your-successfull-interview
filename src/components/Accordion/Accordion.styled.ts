@@ -2,8 +2,8 @@ import { Accordion } from '@mui/material';
 import styled from '@emotion/styled';
 
 export const EAccordion = styled(Accordion)`
-  transition: border-bottom 500ms ease;
+  transition: transform 250ms ease;
   :hover {
-    border-bottom: 5px solid black;
+    transform: scale(1.02);
   }
 `;
